@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.btn_flex{
+  display: flex;
+  gap: 1rem;
+}
