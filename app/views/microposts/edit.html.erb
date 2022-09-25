@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-6">
+    <%= form_with(model: @micropost) do |f| %>
+      <div class="mb-3">
+        <%= f.text_area :content, class: 'form-control'%>
+      </div>
+      <%= f.submit 'Post', class: 'btn btn-primary w-100' %>
+    <% end %>
+  </div>
+</div>
