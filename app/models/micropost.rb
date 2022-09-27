@@ -5,4 +5,8 @@ class Micropost < ApplicationRecord
   
   has_many :favorites, dependent: :destroy
   has_many :user_list, through: :favorites, source: :user
+  
+  def counts_favorites_user_list
+    self.user_list.count
+  end
 end

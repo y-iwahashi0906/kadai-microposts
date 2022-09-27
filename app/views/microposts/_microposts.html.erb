@@ -12,8 +12,8 @@
           </div>
           <div class="btn_flex">
             <% if current_user == micropost.user %>
-              <%= link_to "Edit", edit_micropost_path(micropost), class: 'btn btn-dark btn-sm' %>
-              <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+              <%= link_to "編集", edit_micropost_path(micropost), class: 'btn btn-dark btn-sm' %>
+              <%= link_to "削除", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <% end %>
             <% if current_user.favorites?(micropost) %>
               <%= form_with(model: current_user.favorites.find_by(micropost_id: micropost.id), method: :delete) do |f| %>
@@ -26,8 +26,8 @@
                 <%= f.submit 'お気に入り登録', class: 'btn btn-primary btn-sm' %>
               <% end %>
             <% end %>
+            <span>お気に入り登録数：<%= micropost.counts_favorites_user_list %></span>
           </div>
-          
         </div>
       </li>
     <% end %>
